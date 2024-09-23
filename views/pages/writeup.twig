@@ -1,0 +1,28 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/assets/css/projects.css">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section>
+            <a href="/write-ups">Write-ups</a>
+            <span>> {{title}}</span>
+            <div>
+                <h2>{{title}}</h2>
+            </div>
+            <div>
+                {{content}}
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="/assets/scripts/nav.js"></script>
+{% endblock %}
+

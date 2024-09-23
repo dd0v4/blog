@@ -1,0 +1,76 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+    <title>{{title}}</title>
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section>
+            <div>
+                <h2>Home</h2>
+                <p>Welcome to my blog ! I'm a 19 years old french computer science enthusiast. Currently studying in <a href="https://ri7.fr/">Ri7</a> school.</p>
+                <p>My main interest in IT is everything linked with cybersecurity, HackTheBox/TryHackMe/Root-Me accounts linked in <a href="/about">about</a>.</p>
+            </div>
+            <div>
+                <h2>Spoken languages</h2>
+                <div id="lang">
+                    <div class="langbox">
+                        <img src="/assets/images/france.png" alt="French flag">
+                        <h3>French</h3>
+                        <p>Native</p>
+                    </div>
+                    <div class="langbox">
+                        <img src="/assets/images/english.png" alt="English flag">
+                        <h3>English</h3>
+                        <p>Fluent</p>
+                    </div>
+                    <div class="langbox">
+                        <img src="/assets/images/german.png" alt="German flag">
+                        <h3>German</h3>
+                        <p>20%</p>
+                    </div>
+                    <div class="langbox">
+                        <img src="/assets/images/russian.png" alt="Russian flag">
+                        <h3>Russian</h3>
+                        <p>20%</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Programming languages</h2>
+                <div id="lang">
+                    <div class="langbox">
+                        <img src="/assets/images/python.png" alt="Python logo">
+                        <h3>Python</h3>
+                    </div>
+                    <div class="langbox">
+                        <img src="/assets/images/javascript.png" alt="Javascript logo">
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="langbox">
+                        <img src="/assets/images/php.png" alt="PHP logo">
+                        <h3>PHP</h3>
+                    </div>
+                    <div class="langbox">
+                        <img src="/assets/images/c.png" alt="C logo">
+                        <h3>C</h3>
+                    </div>
+                    <div class="langbox">
+                        <img src="/assets/images/html.png" alt="HTML logo">
+                        <h3>HTML5</h3>
+                    </div>
+                    <div class="langbox">
+                        <img src="/assets/images/css.png" alt="CSS logo">
+                        <h3>CSS3</h3>
+                    </div>
+                </div>
+            </div>
+            <p>I'm also an big Arch Linux fan, but currently using kali-linux via WSL2 for CTFs.</p>
+        </section>
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script src="../assets/scripts/nav.js"></script>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./assets/css/projects.css">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Do you really want to delete it ?</p>
+                  <div id="btnsModal">
+                    <button type="button">Yes</button>
+                    <button type="button">No</button>
+                  </div>
+                </div>  
+            </div>
+            <h2>Write-ups</h2>
+            <div id="projectContain">
+                {% for key, writeup in writeups %}
+                    <div class="projectBox">
+                        <form action="/deletewriteups/{{writeup._id}}" method="post" id="form-{{key}}">
+                            <h3>{{writeup.title}}</h3>
+                            {{writeup.content}}
+                            {{writeup.uploadDate}}
+                            <div id="btn">
+                                <input type="submit" value="Delete">
+                            </div>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+            {% if message %}
+                <p>{{message}}</p>            
+            {% endif %}
+            
+        </section>
+    </main>
+{% endblock %}
+
+
+{% block script %}
+    <script src="./assets/scripts/delete.js"></script>
+    <script src="../assets/scripts/nav.js"></script>
+{% endblock %}
+

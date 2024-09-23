@@ -1,0 +1,37 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/assets/css/projects.css">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section>
+            <h2>Projects</h2>
+            <div id="projectContain">
+                {% for key, project in projects %}
+                <form action="/panel/projects/edit/{{project._id}}" method="get">
+                    <div class="projectBox">
+                        <img src="./assets/images/{{project.language}}.png" alt="{{project.language}}">
+                        <div id="p2box">
+                            <h3>{{project.title}}</h3>
+                            <p class="ita">Published the <span class="date">{{project.uploadDate.toUTCString}}</span></p>
+                        </div>
+                        <input type="hidden" value="{{project._id}}">
+                    </div>
+                    {% if panel %}
+                        <button type="submit">Edit</button>
+                    {% endif %}
+                    
+                </form>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script src="./assets/scripts/projects.js"></script>
+    <script src="../assets/scripts/nav.js"></script>
+{% endblock %}

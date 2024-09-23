@@ -1,0 +1,37 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/assets/css/projects.css">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section>
+            <h2>Write-ups</h2>
+            <div id="projectContain">
+                {% for key, writeup in writeups %}
+                <form action="/panel/write-ups/edit/{{writeup._id}}" method="get">
+                    <div class="projectBox">
+                        <img src="./assets/images/{{writeup.language}}.png" alt="{{writeup.language}}">
+                        <div id="p2box">
+                            <h3>{{writeup.title}}</h3>
+                            <p class="ita">Published the <span class="date">{{writeup.uploadDate.toUTCString}}</span></p>
+                        </div>
+                        <input type="hidden" value="{{writeup._id}}">
+                    </div>
+                    {% if panel %}
+                        <button type="submit">Edit</button>
+                    {% endif %}
+                    
+                </form>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script src="./assets/scripts/writeups.js"></script>
+    <script src="../assets/scripts/nav.js"></script>
+{% endblock %}

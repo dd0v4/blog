@@ -1,0 +1,39 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+    <title>{{title}}</title>
+{% endblock %}
+
+{% block main %}
+    <main>
+        <h2>Register</h2>
+        <form action="./register" method="post">
+            <div>
+                <h3>Username</h3>
+                <input type="text" name="username" id="username" placeholder="Your username...">
+                {% if error %}
+                    <p>{{error.errors.name.message}}</p>
+                {% endif %}
+            </div>
+            <div>
+                <h3>Password</h3>
+                <input type="password" name="password" id="password" placeholder="Your password...">
+                {% if error %}
+                <p>
+                    {% for key, value in error %}
+                        {{ value }}
+                    {% endfor %}
+                </p>
+                {% endif %}
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+{% endblock %}
+
+
+{% block script %}
+    <script src="../assets/scripts/nav.js"></script>
+{% endblock %}

@@ -1,0 +1,230 @@
+body{
+    display: flex;
+    font-family: helvetica;
+    margin: 0;
+    padding: 0;
+    background-color: #1A1B1F;
+}
+
+section{
+    margin-top: 10px;
+}
+main{
+    margin-left: 7%;
+    display: flex;
+    align-items: flex-start;
+}
+main h2{
+    color: #A3A9A9;
+    border-bottom: 2px solid #363637;
+    padding-bottom: 10px;
+    width: 20vw;
+}
+
+main p, span{
+    font-size: 15px;
+    color: #969B9B;
+}
+
+
+main a{
+    color: #596AFF;
+    font-weight: bold;
+}
+
+main a:hover{
+    color: limegreen;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    color: #A3A9A9;
+}
+
+
+form button{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    color: #A3A9A9;
+    border-radius: 10px;
+    padding: 7px;
+    width: 60%;
+    border: 3px solid #222223;
+    font-size: 20px;
+    align-items: center;
+    background-color: #353535;
+}
+
+form button:hover{
+    background-color: limegreen;
+    color: white;
+    cursor: pointer;
+}
+form input{
+    height: 3vh;
+    width: 20vw;
+}
+
+select{
+    width: 50vw;
+}
+#editor{
+    width: 50vw;
+    height: 30vh;
+    background-color: white;
+}
+.ql-toolbar .ql-stroke {
+    fill: none;
+    width: 50vw;
+    background-color: white;
+}
+
+.ql-toolbar .ql-fill {
+    color: black;
+    width: 50vw;
+    background-color: white;
+}
+
+.ql-toolbar .ql-picker {
+    color: black;
+}
+.ql-toolbar{
+    background-color: white;
+    width: 50vw;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modal-content {
+    margin: auto;
+    background-color: #1A1B1F;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+  
+
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.modal button{
+    padding: 10px;
+}
+
+.modal button:hover{
+    cursor: pointer;
+    background-color: limegreen;
+    color: white;
+}
+
+#lang{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+ol li{
+    color: #969B9B;
+}
+h3, h4, h5, h6{
+    color: #969B9B;
+    margin: 0;
+}
+#lang p{
+    color: #969B9B;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+    width: 90%;
+}
+
+#lang img{
+    width: 110px;
+    height: 100px;
+    padding-bottom: 3px;
+}
+.langbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #222223;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#links{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#maildec{
+    text-decoration: underline;
+    color: #596AFF;
+    font-weight: bold;
+    margin: 0;
+}
+
+#maildec:hover{
+    color: limegreen;
+}
+
+img{
+    width: 80%;
+    height: 80%;
+}
+
+@media screen and (min-width: 1px) and (max-width: 800px){
+    main{
+        width: 100vw;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    p{
+        width: 90%;
+    }
+    .langbox{
+        width: 35%;
+    }
+    main h2{
+        width: 70%;
+    }
+    #lang img{
+        width: 95%;
+        height: 95%;
+    }
+    #editor, .ql-toolbar{
+        width: 95%;
+    }
+    form input{
+        width: 92%;
+    }
+}

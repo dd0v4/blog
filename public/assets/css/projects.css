@@ -1,0 +1,99 @@
+.projectBox {
+    border: 3px solid #222223;
+    width: 30vw;
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    color: #969B9B;
+}
+
+.projectBox img{
+    width: 100px;
+    padding: 10px;
+}
+#projectContain{
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+}
+.projectBox:hover{
+    cursor:pointer;
+    border: 3px solid limegreen;
+}
+
+#btn input{
+    background-color: red;
+    color: white;
+    width: 6vw;
+    height: 4vh;
+    font-size: 1.1em;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+#btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn input:hover{
+    background-color: lightblue;
+    color: black;
+}
+
+#p2box{
+    display: flex;
+    flex-direction: column;
+}
+
+.ita{
+    font-style: italic;
+}
+
+.date{
+    font-weight: bold;
+}
+
+.haut{
+    display: flex;
+    justify-content: space-between;
+    width: 23vw;
+}
+
+.haut p{
+    font-family: "Bellota Text", sans-serif;
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1000px
+){
+    .projectBox{
+        width: 90%;
+    }
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 800px
+){
+    .projectBox{
+        height: 120px;
+        width: 80%;
+    }
+    main{
+        align-items: flex-start;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 600px
+){
+    .projectBox{
+        height: 150px;
+        width: 90%;
+    }
+    main{
+        align-items: flex-start;
+    }
+}
+
+

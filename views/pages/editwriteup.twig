@@ -1,0 +1,79 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+    <title>{{title}}</title>
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.core.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="icon" href="/assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block main %}
+    <main>
+        <section>
+            <div>
+                <h2>Edit project</h2>
+            </div>
+            <form action="" method="post" id="projectForm">
+                <h3>Title</h3>
+                <input type="text" name="title" id="title" value="{{title}}">
+                <h3>Content</h3>
+                <div id="editor"></div>
+                <input type="hidden" name="content" id="content">
+                <input type="hidden" name="difficultyIn" id="difficultyIn" value="{{difficulty}}">
+                <input type="hidden" name="contentEdit" id="contentEdit" value="{{content|escape}}">
+                {% if error %}
+                <p>
+                    {% for key, value in error %}
+                        {{ value }}
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <input type="hidden" name="uploadDate" id="uploadDate">
+                <h3>Difficulty</h3>
+                <select name="difficulty" id="difficulty">
+                    <option value="">Choose a difficulty...</option>
+                    <option value="EASY">Easy</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="HARD">Hard</option>
+                    <option value="INSANE">Insane</option>
+                </select>
+
+                <div>
+                    <button type="submit" id="submbtn">Submit</button>
+                    <button type="button" id="previewbtn">Preview</button>
+                </div>
+                {% if success %}
+                    <p>Write-up successfully edited.</p>
+                {% endif %}
+            </form>
+
+            <div>
+                <h2>Preview</h2>
+            </div>
+            <div id="preview">
+
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill-image-resize-module@3.0.0/image-resize.min.js"></script>
+    <script src="/assets/scripts/addproject.js"></script>   
+    <script src="/assets/scripts/editwriteup.js"></script>
+{% endblock %}

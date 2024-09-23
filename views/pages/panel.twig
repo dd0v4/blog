@@ -1,0 +1,38 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section>
+            <p>Welcome d0v4 !</p>
+            <ul>
+                <li>
+                    <a href="../addproject">Add a new project</a>
+                </li>
+                <li>
+                    <a href="../deleteprojects">Delete a project</a>
+                </li>
+                <li>
+                    <a href="../addwriteup">Add a write-up</a>
+                </li>
+                <li>
+                    <a href="../deletewriteups">Delete a write-up</a>
+                </li>
+                <li>
+                    <a href="/panel/projects">Edit a project</a>
+                </li>
+                <li>
+                    <a href="/panel/write-ups">Edit a write-up</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script src="../assets/scripts/nav.js"></script>
+{% endblock %}
